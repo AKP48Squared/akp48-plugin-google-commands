@@ -1,0 +1,13 @@
+{
+  "name": "google-commands",
+  "type": "MessageHandler",
+  "description": "Google commands for AKP48.",
+  "main": "main.js",
+  "commands": {
+    "googl": {
+      "helpText": "Gives a short URL for the provided longer URL.",
+      "usageText": "<url>",
+      "perms": []
+    }
+  }
+}
