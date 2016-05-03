@@ -21,9 +21,9 @@ class GoogleCommands extends BasicCommands {
 
     //this means we don't have an API key, probably.
     if(this._config.deleteMe) {
-      this.googleAPI = require('./google')();
+      this.googleAPI = new (require('./google.js'))();
     } else {
-      this.googleAPI = require('./google')(this._config.apiKey);
+      this.googleAPI = new (require('./google.js'))(this._config.apiKey);
     }
 
     var self = this;
@@ -45,7 +45,7 @@ class GoogleCommands extends BasicCommands {
     //run the handleCommand logic from BasicCommands, which should use our defined commands instead.
     GLOBAL.logger.silly(`${this._pluginName}: Attempting to handle command using BasicCommands logic.`);
     super.handleCommand(message, context, resolve);
-    delete context.GoogleAPI; //don't want other plugins to have this in the context.
+    //delete context.GoogleAPI; //don't want other plugins to have this in the context.
   }
 }
 
