@@ -10,7 +10,7 @@ class GoogleCommands extends BasicCommands {
 
     this._config = config;
     if(!this._config) {
-      GLOBAL.logger.info(`${this._pluginName}: No config specified. Generating defaults.`);
+      global.logger.info(`${this._pluginName}: No config specified. Generating defaults.`);
       this._config = {
         deleteMe: 'DELETE THIS KEY AND ADD AN API KEY FOR ADDITIONAL FUNCTIONALITY',
         apiKey: 'Use this documentation to obtain a Server key: https://support.google.com/cloud/answer/6158862?hl=en&ref_topic=6262490'
@@ -37,13 +37,13 @@ class GoogleCommands extends BasicCommands {
   }
 
   handleCommand(message, context, resolve) {
-    GLOBAL.logger.silly(`${this._pluginName}: Received command.`);
+    global.logger.silly(`${this._pluginName}: Received command.`);
 
     //inject Google API into the context.
     context.GoogleAPI = this.googleAPI;
 
     //run the handleCommand logic from BasicCommands, which should use our defined commands instead.
-    GLOBAL.logger.silly(`${this._pluginName}: Attempting to handle command using BasicCommands logic.`);
+    global.logger.silly(`${this._pluginName}: Attempting to handle command using BasicCommands logic.`);
     super.handleCommand(message, context, resolve);
     delete context.GoogleAPI; //don't want other plugins to have this in the context.
   }
