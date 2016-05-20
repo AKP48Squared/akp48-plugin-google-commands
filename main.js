@@ -51,3 +51,4 @@ class GoogleCommands extends BasicCommands {
 
 module.exports = GoogleCommands;
 module.exports.type = 'MessageHandler';
+module.exports.pluginName = 'google-commands';
