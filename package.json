@@ -1,6 +1,6 @@
 {
   "name": "akp48-plugin-google-commands",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds some Google functionality to AKP48.",
   "main": "main.js",
   "scripts": {
